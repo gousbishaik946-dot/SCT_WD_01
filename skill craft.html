@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* Navigation Bar */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.5);
+    transition:0.4s;
+    z-index:1000;
+}
+
+nav.scrolled{
+    background:#0077cc;
+    box-shadow:0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    margin-left:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    padding:8px 15px;
+    transition:0.3s;
+    border-radius:5px;
+}
+
+.nav-links a:hover{
+    background:white;
+    color:#0077cc;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.5);
+    padding:30px;
+    border-radius:10px;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#0077cc;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#005fa3;
+}
+
+/* Sections */
+section{
+    padding:100px 10%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#0077cc;
+}
+
+section p{
+    text-align:center;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+/* Services Cards */
+.service-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:280px;
+    padding:20px;
+    background:#f4f4f4;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Contact */
+.contact{
+    background:#f8f8f8;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<nav id="navbar">
+    <div class="logo">My Website</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+</nav>
+
+<!-- Home -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Welcome to Our Website</h1>
+        <p>Creating modern and responsive web experiences.</p>
+        <a href="#about" class="btn">Learn More</a>
+    </div>
+</section>
+
+<!-- About Us -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        We are a passionate team dedicated to delivering high-quality
+        web solutions. Our mission is to create innovative and
+        user-friendly digital experiences for businesses and individuals.
+    </p>
+    <center>
+        <a href="#" class="btn">Read More</a>
+    </center>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <h2>Our Services</h2>
+
+    <div class="service-container">
+
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Responsive and modern websites using latest technologies.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+        <div class="card">
+            <h3>UI/UX Design</h3>
+            <p>Creative and user-friendly designs for better experiences.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+        <div class="card">
+            <h3>Digital Marketing</h3>
+            <p>Grow your business with effective online marketing.</p>
+            <a href="#" class="btn">Explore</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+
+    <p>Email: info@example.com</p>
+    <p>Phone: +91 9876543210</p>
+    <p>Address: Hyderabad, India</p>
+
+    <center>
+        <a href="mailto:info@example.com" class="btn">Send Email</a>
+    </center>
+</section>
+
+<footer>
+    <p>&copy; 2026 My Website. All Rights Reserved.</p>
+</footer>
+
+<script>
+window.addEventListener("scroll", function() {
+    let navbar = document.getElementById("navbar");
+
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+</script>
+
+</body>
+</html>
